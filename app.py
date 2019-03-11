@@ -9,9 +9,9 @@ import pandas as pd
 app = Flask(__name__)
 
 # Create an engine to a SQLite database
-#app.config['SQLALCHEMY_DATABASE_URI'] = "sqlite:///visual_data.sqlite"
+app.config['SQLALCHEMY_DATABASE_URI'] = "sqlite:///visualdata.sqlite"
 
-#db = SQLAlchemy(app)
+db = SQLAlchemy(app)
 
 # reflect an existing database into a new model
 #Base = automap_base()
@@ -19,26 +19,15 @@ app = Flask(__name__)
 #aut0map bae only works with a primary key - so need to make sure there is a primary key
 Base= automap_base()
 
-engine= create_engine('sqlite:///pitchingdata.sqlite')
+#engine= create_engine('sqlite:///pitchingdata.sqlite')
 
-Base.prepare(engine, reflect=True)
+Base.prepare(db.engine, reflect=True)
 
 Visualdata= Base.classes.visualdata
 
-session= Session(engine)
 
 
 
-
-# reflect the tables
-
-
-# Save reference to the tables
-
-#session = scoped_session(sessionmaker(bind=engine))
-
-# Create our session (link) from Python to the DB
-#session = scoped_session(sessionmaker(bind=engine))
 
 # Flask Routes
 @app.route("/")
@@ -49,11 +38,17 @@ def home():
 
 @app.route("/test")
 def test():
+
+    #FLASK APP WORKS!!!
     """Testing to see if this works"""
     #need to write a better query but should work
-    results = session.query(Select * from Visualdata.id)
 
-    return results
+    stmt = db.session.query(Visualdata).statement
+    df = pd.read_sql_query(stmt, db.session.bind)
+
+    # Return a list of the column names (sample names)
+    return jsonify(list(df.columns)[2:])
+
 
 
 if __name__ == "__main__":
