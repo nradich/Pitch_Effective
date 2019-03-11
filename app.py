@@ -9,7 +9,7 @@ import pandas as pd
 app = Flask(__name__)
 
 # Create an engine to a SQLite database
-app.config['SQLALCHEMY_DATABASE_URI'] = "sqlite:///visualdata.sqlite"
+app.config['SQLALCHEMY_DATABASE_URI'] = "sqlite:///pitchingdata.sqlite"
 
 db = SQLAlchemy(app)
 
@@ -47,9 +47,19 @@ def test():
     df = pd.read_sql_query(stmt, db.session.bind)
 
     # Return a list of the column names (sample names)
-    return jsonify(list(df.columns)[2:])
+    return jsonify(list(df.pitch_name[:50]))
 
+#@app.route("/sample")
+#def sample():
 
+    #stmt = db.session.query(Visualdata).statement
+    #df = pd.read_sql_query(stmt, db.session.bind)
+
+   # sample = df.loc[df.pitch_name == 'Changeup']
+
+    #data = [sample.values.tolist()]
+
+    #return jsonify(data)
 
 if __name__ == "__main__":
     app.run(debug=True)
