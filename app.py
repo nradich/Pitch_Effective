@@ -47,7 +47,7 @@ def test():
     df = pd.read_sql_query(stmt, db.session.bind)
 
     # Return a list of the column names (sample names)
-    return jsonify(list(df.pitch_name[:50]))
+    return jsonify(list(df.pitch_name))
 
 #@app.route("/sample")
 #def sample():
