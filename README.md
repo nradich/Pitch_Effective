@@ -24,11 +24,15 @@ When I did run the SVM with 150,000 rows it followed the same trend and with les
 
 ![Feature_important](feature_importance.png)
 
+Above is a graph displaying the feature importance from the Gradient Boosting Classifier. Launch Speed(Exit Velocity) accounts for more than 60% of the model's classification.
+
 In closing, both the models generated results, just not to the to the expected level and faultered when handling the full dataset. 
 
 # Model Analysis
 
-Baseball can be  hard game to interpret. For example, a pitch with identical metric could go for a double for one player, but an out for another based on defensive player positioning. The model would have no way of knowing this which could be one reason by the models did not perform as well with the full dataset. 
+Baseball can be  hard game to interpret. For example, a pitch with identical metrics could go for a double for one player, but an out for another based on defensive player positioning. The model would have no way of knowing this which could be one reason by the models did not perform as well with the full dataset. 
+
+I was asking a lot of the models, now only to predict the outcome of event, but whether a player swung at a pitch, hit it fairly, and the magnitude of the hit. 
 
 # Future Work
 
