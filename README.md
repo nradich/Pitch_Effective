@@ -24,7 +24,7 @@ When I did run the SVM with 150,000 rows it followed the same trend and with les
 
 ![Feature_important](feature_importance.png)
 
-Above is a graph displaying the feature importance from the Gradient Boosting Classifier. Launch Speed(Exit Velocity) accounts for more than 60% of the model's classification.
+Above is a graph displaying the feature importance from the Gradient Boosting Classifier. Launch Speed(Exit Velocity) accounts for more than 60% of the model's classification. If the model was interpreting the data like I expected, I would have liked to see more weight placed on the actual pitch metrics on none the swing analysis.
 
 In closing, both the models generated results, just not to the to the expected level and faultered when handling the full dataset. 
 
