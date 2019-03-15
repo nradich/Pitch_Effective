@@ -7,6 +7,7 @@ The model evaluations can be found in  Predict_outcome.ipynb. The various data c
 # Data
 The data from this project was acquired using the PyBaseball API which pulled statcast data from the 2015-2018 MLB seasons.
 The definitions for the column names can be found at this link https://baseballsavant.mlb.com/csv-docs.
+
 Data: https://github.com/jldbc/pybaseball
 
 # Process
@@ -20,6 +21,8 @@ The three primary models used were Logistic Regression, Gradient Boosting Classi
 However, when the full 750,000 rows were feed to the models, all of the models performed worse. The R squared scores for both the logistic regression and GBC dropped. Their corresponding classification reports also showed worse ratings. The SVM, was unable to complete testing. After some research, SVMs do not function well with more than 200,000 rows of data unfortunatley.
 
 When I did run the SVM with 150,000 rows it followed the same trend and with less acurate results. Between the three models, R-squared values stablized around .55 and f1 values around .6. 
+
+(feature_importance.png)
 
 In closing, both the models generated results, just not to the to the expected level and faultered when handling the full dataset. 
 
