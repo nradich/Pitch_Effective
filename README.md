@@ -22,7 +22,7 @@ However, when the full 750,000 rows were feed to the models, all of the models p
 
 When I did run the SVM with 150,000 rows it followed the same trend and with less acurate results. Between the three models, R-squared values stablized around .55 and f1 values around .6. 
 
-(feature_importance.png)
+![Feature_important](feature_importance.png)
 
 In closing, both the models generated results, just not to the to the expected level and faultered when handling the full dataset. 
 
