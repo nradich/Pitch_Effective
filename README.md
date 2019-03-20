@@ -15,7 +15,7 @@ After acquiring and cleaning the data, pitching metrics (pitch velocity, movemen
 
 The three primary models used were Logistic Regression, Gradient Boosting Classifier, and Support Vector Machine. At first, I tested each model with a subset of the full dataset in order to gauge whether the models would produce sufficient results. This is also in part because when I was initially testing different aspects of the data, some models performed signicantly worse with the full dataset compared to the subset.
 
-![Subset_v_Full Dataset | 50x50](images/subset_v_full.png)
+![Subset_v_Full Dataset](images/subset_v_full.png)
 
 The above images displays the R-sqaured scores recorded from the models and their corresponding f1-scores. The logistic regression provided a good base to measure the other models off of. I was encouraged to see that all of the models performed better or remained consistent with their measurement when tested with the full dataset compared to the subset.
 
@@ -24,7 +24,7 @@ I was most impressed by its increased f1 score indicating that it was more accur
 
 Next, the data was scaled using a min-max scaler and then feed to the models again.
 
-![full_v_scaled](full_v_scaled.png)
+![full_v_scaled](images/full_v_scaled.png)
 
 
 
