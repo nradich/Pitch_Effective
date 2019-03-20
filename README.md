@@ -26,31 +26,21 @@ Next, the data was scaled using a min-max scaler and then feed to the models aga
 
 ![full_v_scaled](images/full_v_scaled.png)
 
-
-
-
-
-
-
-However, when the full 750,000 rows were feed to the models, all of the models performed worse. The R squared scores for both the logistic regression and GBC dropped. Their corresponding classification reports also showed worse ratings. The SVM, was unable to complete testing. After some research, SVMs do not function well with more than 200,000 rows of data unfortunatley.
-
-When I did run the SVM with 150,000 rows it followed the same trend and with less acurate results. Between the three models, R-squared values stablized around .55 and f1 values around .6. 
-
-![Feature_important](feature_importance.png)
-
-Above is a graph displaying the feature importance from the Gradient Boosting Classifier. Launch Speed(Exit Velocity) accounts for more than 60% of the model's classification. If the model was interpreting the data like I expected, I would have liked to see more weight placed on the actual pitch metrics on none the swing analysis.
-
-In closing, both the models generated results, just not to the to the expected level and faultered when handling the full dataset. 
+Again, all of the models either performed better or remain consistent with their readings. The SVM continued to improve, reflected in its improved R-sqaured score and f1-score. At the end of testing the models, the gradient boosting classifier appears to be the best fit for accurately predicting outcomes on a baseball field based on pitch metrics. This is in part because GBCs perform well when dealing with correlated data, as baseball data is often highly correlated. 
 
 # Model Analysis
+![Feature_important](images/GBC_importance.png)
 
-Baseball can be  hard game to interpret. For example, a pitch with identical metrics could go for a double for one player, but an out for another based on defensive player positioning. The model would have no way of knowing this which could be one reason by the models did not perform as well with the full dataset. 
+Above is a graph displaying the feature importance from the Gradient Boosting Classifier. The model relied heavily on four metrics: hit distance, exit velocity, launch speed angle, and hit location. These metrics are all key in determing how well a batted ball is struck and where the ball is expected to land. 
 
-I was asking a lot of the models, now only to predict the outcome of event, but whether a player swung at a pitch, hit it fairly, and the magnitude of the hit. 
+I was surprised to see that pitch velocity was almost a non-factor in determining outcome. This could be in part of the outcomes I was testing for. I would expect that if swinging strike was a possible outcome, velocity would have had a more significant role in the analysis. 
+
+Baseball can be  hard game to interpret. For example, a pitch with identical metrics could go for a double for one player, but an out for another based on defensive player positioning. These model would have no way of knowing this which could be one reason by the models did not perform as well with the full dataset. 
+
 
 # Future Work
 
-In continuing to work on this project the next step is to step up a neural network in hopes of generating an accurate model. 
+In continuing to work on this project the next step is to set up a neural network in hopes of generating continuing the promise that the SVM showed in testing. 
 
 
 
