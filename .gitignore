@@ -3,3 +3,5 @@ data/
 visual_data.csv
 completed_data.csv
 Pitch_Analysis.git/
+app.py
+templates
