@@ -15,7 +15,7 @@ After acquiring and cleaning the data, pitching metrics (pitch velocity, movemen
 
 The three primary models used were Logistic Regression, Gradient Boosting Classifier, and Support Vector Machine. At first, I tested each model with a subset of the full dataset in order to gauge whether the models would produce sufficient results. This is also in part because when I was initially testing different aspects of the data, some models performed signicantly worse with the full dataset compared to the subset.
 
-![Subset_v_Full Dataset] (images/full_v_scaled.png)
+![Subset_v_Full Dataset](images/full_v_scaled.png)
 
 
 
